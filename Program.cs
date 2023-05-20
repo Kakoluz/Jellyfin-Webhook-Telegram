@@ -28,7 +28,7 @@ builder.Services.AddSingleton<ITelegramBotService, TelegramBotService>();
 
 var app = builder.Build();
 
-app.Services.GetService<ITelegramBotService>().sendNotificationAdmin("Servicio de noticiaciones iniciado");
+app.Services.GetService<ITelegramBotService>().sendNotificationAdmin("Notification service started");
 
 // Configure the HTTP request pipeline.
 

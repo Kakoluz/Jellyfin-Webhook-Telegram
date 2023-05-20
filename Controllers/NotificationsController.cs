@@ -32,8 +32,10 @@ namespace TelegramWebhooks.Controllers
 			try
 			{
 				Notification? update = JsonConvert.DeserializeObject<Notification>(message);
-				if (update == null)
+				Console.WriteLine("Recieved message:\n" + message);
+				if (update == null || (update.message == null && update.photo == null))
 				{
+					Console.Error.WriteLine("Error in message format");
 					return BadRequest();
 				}
 				telegramBotService.sendNotification(update);
