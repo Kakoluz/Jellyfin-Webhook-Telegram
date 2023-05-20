@@ -50,11 +50,20 @@ namespace TelegramWebhooks.Controllers
 		// POST: Notifications/Admin
 		[HttpPost]
 		[Route("admin")]
-		public ActionResult Admin(string message)
+		public ActionResult Admin([FromBody] string message)
 		{
 			try
 			{
-				telegramBotService.sendNotificationAdmin(message);
+				Notification? update = JsonConvert.DeserializeObject<Notification>(message);
+				Console.WriteLine("Recieved message for admin:\n" + message);
+				if (update != null && (update.message != null && update.photo != null))
+				{
+					telegramBotService.sendNotificationAdmin(update.message);
+				}
+				else
+				{
+					telegramBotService.sendNotificationAdmin(message);
+				}
 			}
 			catch
 			{
