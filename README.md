@@ -39,4 +39,4 @@ Its built on the ASP.NET 7.0 Core platform.
 1. Follow Usage guides!
 
 ## License
-This project is licensed under the GNU GPL License - see the [LICENSE](https://github.com/Kakoluz/Jellyfin-Webhook-Telegram/blob/main/LICENSE) file for details.
+This project is licensed under the GNU GPL License - see the [LICENSE](https://github.com/Kakoluz/Jellyfin-Webhook-Telegram/blob/master/LICENSE) file for details.
